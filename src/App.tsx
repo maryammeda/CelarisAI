@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/CelarisAI">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/study-studio" element={<StudyStudio />} />
