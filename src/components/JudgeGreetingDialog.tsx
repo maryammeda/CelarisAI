@@ -34,7 +34,7 @@ export const JudgeGreetingDialog = () => {
       >
         <DialogHeader>
           <div className="flex justify-center mb-4">
-            <img src="/logo.png" alt="CelarisAI Logo" className="w-12 h-12 icon-pulsate" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="CelarisAI Logo" className="w-12 h-12 icon-pulsate" />
           </div>
           <DialogTitle className="text-2xl text-center glow-text text-white">
             Greetings, Honorable Judges!

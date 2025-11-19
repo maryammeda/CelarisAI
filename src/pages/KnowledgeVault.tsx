@@ -50,7 +50,7 @@ const KnowledgeVault = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex justify-between items-center">
             <Link to="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
-              <img src="/logo.png" alt="CelarisAI Logo" className="w-12 h-12 icon-pulsate" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="CelarisAI Logo" className="w-12 h-12 icon-pulsate" />
               <div>
                 <h1 className="text-4xl font-bold glow-text">CelarisAI</h1>
                 <p className="text-sm text-muted-foreground mt-1">Your Intelligent Study Companion</p>

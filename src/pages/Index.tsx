@@ -48,7 +48,7 @@ const Index = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex justify-between items-center">
             <Link to="/" className="flex items-center gap-4">
-              <img src="/logo.png" alt="CelarisAI Logo" className="w-12 h-12 icon-pulsate" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="CelarisAI Logo" className="w-12 h-12 icon-pulsate" />
               <div>
                 <h1 className="text-4xl font-bold glow-text">CelarisAI</h1>
                 <p className="text-sm text-muted-foreground mt-1">Your Intelligent Study Companion</p>
@@ -67,7 +67,7 @@ const Index = () => {
       {/* Hero Section with Aurora Background */}
       <section className="container mx-auto px-6 py-12 text-center aurora-bg overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10">
-          <img src="/logo.png" alt="CelarisAI Logo" className="w-16 h-16 mx-auto mb-4 icon-pulsate" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="CelarisAI Logo" className="w-16 h-16 mx-auto mb-4 icon-pulsate" />
           <h2 className="text-5xl md:text-6xl font-bold mb-4 glow-text">
             Study Smarter, Not Harder
           </h2>
