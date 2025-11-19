@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Lightbulb, LineChart, Database, Sparkles, FileText, Mic, Video, BrainCircuit, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { JudgeGreetingDialog } from "@/components/JudgeGreetingDialog";
+import { ComingSoonDialog } from "@/components/ComingSoonDialog";
 import { NavBar } from "@/components/NavBar";
 import { useStaggeredScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+  
   // Scroll animations for feature cards (3 cards)
   const { itemRefs: featureRefs, visibleItems: visibleFeatures } = useStaggeredScrollAnimation(3);
   
@@ -17,31 +22,36 @@ const Index = () => {
       icon: <BookOpen className="w-8 h-8" />,
       title: "Study Studio",
       description: "Transform your notes into flashcards, audio summaries, and video explainers",
-      features: ["PPT/PDF Notes", "Flashcards", "Audio Summary", "Video Explainer", "Auto Quiz Maker"]
+      features: ["PPT/PDF Notes", "Flashcards", "Audio Summary", "Video Explainer", "Auto Quiz Maker"],
+      path: "/study-studio"
     },
     {
       icon: <LineChart className="w-8 h-8" />,
       title: "Productivity Studio",
       description: "Boost your productivity with AI-powered meeting notes and task planning",
-      features: ["AI Meeting Notes", "Essay Humanizer", "AI Detector", "Task Planner"]
+      features: ["AI Meeting Notes", "Essay Humanizer", "AI Detector", "Task Planner"],
+      path: "/productivity-studio"
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Creativity Studio",
       description: "Bring your ideas to life with pitch decks and visual generators",
-      features: ["Idea Pitch Deck", "Script & Voice Tool", "Visual Generator"]
+      features: ["Idea Pitch Deck", "Script & Voice Tool", "Visual Generator"],
+      path: "/creativity-studio"
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Knowledge Vault",
       description: "Store and access all your AI-generated content in one place",
-      features: ["Smart Storage", "Q&A from Notes", "Learning Tone Adaptation"]
+      features: ["Smart Storage", "Q&A from Notes", "Learning Tone Adaptation"],
+      path: "/knowledge-vault"
     }
   ];
 
   return (
     <div className="min-h-screen text-foreground">
       <JudgeGreetingDialog />
+      <ComingSoonDialog open={isComingSoonOpen} onOpenChange={setIsComingSoonOpen} />
       
       {/* Header */}
       <header className="glass-nav relative">
@@ -136,7 +146,8 @@ const Index = () => {
           {/* Study Studio - Large Featured Card with Teal accent */}
           <Card 
             ref={(el) => studioRefs.current[0] = el}
-            className={`bento-large glass-card-teal card-glow-teal group scroll-animate fade-up smooth delay-0 ${visibleStudios.has(0) ? 'visible' : ''}`}
+            onClick={() => navigate(studios[0].path)}
+            className={`bento-large glass-card-teal card-glow-teal group scroll-animate fade-up smooth delay-0 cursor-pointer ${visibleStudios.has(0) ? 'visible' : ''}`}
           >
             <CardHeader>
               <div className="flex items-center gap-4 mb-2">
@@ -162,7 +173,8 @@ const Index = () => {
           {/* Productivity Studio - Medium Card with Magenta accent */}
           <Card 
             ref={(el) => studioRefs.current[1] = el}
-            className={`bento-medium glass-card-magenta card-glow-magenta group scroll-animate fade-right smooth delay-200 ${visibleStudios.has(1) ? 'visible' : ''}`}
+            onClick={() => navigate(studios[1].path)}
+            className={`bento-medium glass-card-magenta card-glow-magenta group scroll-animate fade-right smooth delay-200 cursor-pointer ${visibleStudios.has(1) ? 'visible' : ''}`}
           >
             <CardHeader>
               <div className="flex items-center gap-3 mb-2">
@@ -188,7 +200,8 @@ const Index = () => {
           {/* Creativity Studio - Medium Card with Purple accent */}
           <Card 
             ref={(el) => studioRefs.current[2] = el}
-            className={`bento-medium glass-card-purple card-glow-purple group scroll-animate scale-up spring delay-300 ${visibleStudios.has(2) ? 'visible' : ''}`}
+            onClick={() => navigate(studios[2].path)}
+            className={`bento-medium glass-card-purple card-glow-purple group scroll-animate scale-up spring delay-300 cursor-pointer ${visibleStudios.has(2) ? 'visible' : ''}`}
           >
             <CardHeader>
               <div className="flex items-center gap-3 mb-2">
@@ -214,7 +227,8 @@ const Index = () => {
           {/* Knowledge Vault - Medium Card with Teal accent */}
           <Card 
             ref={(el) => studioRefs.current[3] = el}
-            className={`bento-medium glass-card-teal card-glow-teal group scroll-animate fade-left smooth delay-400 ${visibleStudios.has(3) ? 'visible' : ''}`}
+            onClick={() => navigate(studios[3].path)}
+            className={`bento-medium glass-card-teal card-glow-teal group scroll-animate fade-left smooth delay-400 cursor-pointer ${visibleStudios.has(3) ? 'visible' : ''}`}
           >
             <CardHeader>
               <div className="flex items-center gap-3 mb-2">
@@ -248,7 +262,11 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join thousands of students who are already studying smarter with CelarisAI
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 btn-glow">
+            <Button 
+              size="lg" 
+              onClick={() => setIsComingSoonOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-white text-lg px-8 btn-glow"
+            >
               Start Your Free Trial
             </Button>
           </CardContent>
