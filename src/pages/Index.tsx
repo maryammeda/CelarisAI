@@ -166,8 +166,8 @@ const Index = () => {
               <ul className="space-y-3">
                 {studios[0].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-base">
-                    <div className="w-2 h-2 rounded-full bg-primary shadow-lg shadow-primary/50" />
-                    <span className="text-white">{feature}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-lg shadow-primary/50" />
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -194,7 +194,7 @@ const Index = () => {
                 {studios[1].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-secondary shadow-md shadow-secondary/50" />
-                    <span className="text-white">{feature}</span>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -221,7 +221,7 @@ const Index = () => {
                 {studios[2].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-md shadow-purple-400/50" />
-                    <span className="text-white">{feature}</span>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -248,7 +248,7 @@ const Index = () => {
                 {studios[3].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-md shadow-primary/50" />
-                    <span className="text-white">{feature}</span>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
