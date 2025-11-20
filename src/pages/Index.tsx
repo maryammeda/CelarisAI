@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { JudgeGreetingDialog } from "@/components/JudgeGreetingDialog";
 import { ComingSoonDialog } from "@/components/ComingSoonDialog";
 import { StatsCounter } from "@/components/StatsCounter";
-import { Testimonials } from "@/components/Testimonials";
 import { NavBar } from "@/components/NavBar";
 import { useStaggeredScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -257,9 +256,6 @@ const Index = () => {
           </Card>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <Testimonials />
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 py-20">

@@ -72,19 +72,19 @@ export const StatsCounter = () => {
   return (
     <div
       ref={sectionRef}
-      className="container mx-auto px-6 py-16"
+      className="container mx-auto px-6 py-12"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 items-center justify-items-center">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center stats-card"
+              className="flex flex-col items-center justify-center stats-card w-full"
               style={{
                 animation: isVisible ? `fadeInUp 0.6s ease-out ${index * 0.1}s backwards` : 'none',
               }}
             >
-              <div className="relative flex flex-col items-center">
+              <div className="relative flex flex-col items-center justify-center w-full">
                 {/* Glowing circle background */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div
@@ -101,7 +101,7 @@ export const StatsCounter = () => {
                 </div>
 
                 {/* Number */}
-                <div className="relative text-5xl md:text-6xl font-black mb-3 flex items-center justify-center min-h-[4rem]">
+                <div className="relative text-5xl md:text-6xl font-black mb-4 flex items-center justify-center w-full">
                   <span
                     className={`${
                       index === 0
@@ -123,7 +123,7 @@ export const StatsCounter = () => {
                 </div>
 
                 {/* Label */}
-                <div className="text-sm md:text-base text-muted-foreground font-medium text-center whitespace-nowrap">
+                <div className="text-sm md:text-base text-muted-foreground font-medium text-center w-full">
                   {stat.label}
                 </div>
               </div>
