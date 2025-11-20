@@ -219,9 +219,8 @@ const Index = () => {
             <CardContent>
               <ul className="space-y-2">
                 {studios[2].features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-md shadow-purple-400/50" />
-                    <span className="text-muted-foreground">{feature}</span>
+                  <li key={i} className="text-sm text-muted-foreground">
+                    {feature}
                   </li>
                 ))}
               </ul>
