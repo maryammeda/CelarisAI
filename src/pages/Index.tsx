@@ -194,7 +194,7 @@ const Index = () => {
                 {studios[1].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-secondary shadow-md shadow-secondary/50" />
-                    <span className="text-muted-foreground">{feature}</span>
+                    <span className="text-white">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -221,7 +221,7 @@ const Index = () => {
                 {studios[2].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-md shadow-purple-400/50" />
-                    <span className="text-muted-foreground">{feature}</span>
+                    <span className="text-white">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -248,7 +248,7 @@ const Index = () => {
                 {studios[3].features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-md shadow-primary/50" />
-                    <span className="text-muted-foreground">{feature}</span>
+                    <span className="text-white">{feature}</span>
                   </li>
                 ))}
               </ul>
