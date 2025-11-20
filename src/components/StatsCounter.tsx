@@ -10,8 +10,8 @@ interface Stat {
 const stats: Stat[] = [
   { value: 3, label: 'AI Studios', suffix: '' },
   { value: 12, label: 'Smart Tools', suffix: '+' },
-  { value: 80, label: 'Faster Learning', suffix: '%' },
-  { value: 1000, label: 'Students Helped', suffix: '+' },
+  { value: 15, label: 'Total Features', suffix: '+' },
+  { value: 5, label: 'Output Formats', suffix: '+' },
 ];
 
 export const StatsCounter = () => {
