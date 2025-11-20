@@ -608,4 +608,162 @@ All colors MUST be HSL.
     background-size: 1000px 100%;
     animation: shimmer 3s infinite linear;
   }
+
+  /* Interactive Studio Card Hover Effects */
+  .bento-large, .bento-medium {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-large:hover, .bento-medium:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Enhanced glow on hover */
+  .bento-large:hover.card-glow-teal {
+    box-shadow: 0 0 40px rgba(0, 245, 212, 0.4), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .bento-medium:hover.card-glow-magenta {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.4), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .bento-medium:hover.card-glow-purple {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Shimmer effect on hover */
+  .bento-large::before, .bento-medium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .bento-large:hover::before, .bento-medium:hover::before {
+    left: 100%;
+  }
+
+  /* Feature list animation on hover */
+  .bento-large:hover li, .bento-medium:hover li {
+    animation: slideInRight 0.3s ease-out backwards;
+  }
+
+  .bento-large:hover li:nth-child(1) { animation-delay: 0.05s; }
+  .bento-large:hover li:nth-child(2) { animation-delay: 0.1s; }
+  .bento-large:hover li:nth-child(3) { animation-delay: 0.15s; }
+  .bento-large:hover li:nth-child(4) { animation-delay: 0.2s; }
+  .bento-large:hover li:nth-child(5) { animation-delay: 0.25s; }
+
+  .bento-medium:hover li:nth-child(1) { animation-delay: 0.05s; }
+  .bento-medium:hover li:nth-child(2) { animation-delay: 0.1s; }
+  .bento-medium:hover li:nth-child(3) { animation-delay: 0.15s; }
+  .bento-medium:hover li:nth-child(4) { animation-delay: 0.2s; }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Stats Counter Styles */
+  .stats-card {
+    transition: all 0.3s ease;
+  }
+
+  .stats-card:hover {
+    transform: translateY(-5px);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Studio Page Card Hover Effects */
+  .glass-card-teal.group,
+  .glass-card-magenta.group,
+  .glass-card-purple.group {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card-teal.group:hover,
+  .glass-card-magenta.group:hover,
+  .glass-card-purple.group:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Enhanced glow on hover for studio cards */
+  .glass-card-teal.group:hover {
+    box-shadow: 0 0 40px rgba(0, 245, 212, 0.4), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-card-magenta.group:hover {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.4), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-card-purple.group:hover {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Shimmer effect for studio cards */
+  .glass-card-teal.group::before,
+  .glass-card-magenta.group::before,
+  .glass-card-purple.group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .glass-card-teal.group:hover::before,
+  .glass-card-magenta.group:hover::before,
+  .glass-card-purple.group:hover::before {
+    left: 100%;
+  }
+
+  /* Testimonials Star Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
