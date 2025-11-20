@@ -74,19 +74,19 @@ export const StatsCounter = () => {
       ref={sectionRef}
       className="container mx-auto px-6 py-16"
     >
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center stats-card"
+              className="flex flex-col items-center justify-center stats-card"
               style={{
                 animation: isVisible ? `fadeInUp 0.6s ease-out ${index * 0.1}s backwards` : 'none',
               }}
             >
-              <div className="relative">
+              <div className="relative flex flex-col items-center">
                 {/* Glowing circle background */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div
                     className={`w-32 h-32 rounded-full blur-3xl opacity-20 ${
                       index === 0
@@ -101,7 +101,7 @@ export const StatsCounter = () => {
                 </div>
 
                 {/* Number */}
-                <div className="relative text-5xl md:text-6xl font-black mb-3">
+                <div className="relative text-5xl md:text-6xl font-black mb-3 flex items-center justify-center min-h-[4rem]">
                   <span
                     className={`${
                       index === 0
@@ -123,7 +123,7 @@ export const StatsCounter = () => {
                 </div>
 
                 {/* Label */}
-                <div className="text-sm md:text-base text-muted-foreground font-medium">
+                <div className="text-sm md:text-base text-muted-foreground font-medium text-center whitespace-nowrap">
                   {stat.label}
                 </div>
               </div>
